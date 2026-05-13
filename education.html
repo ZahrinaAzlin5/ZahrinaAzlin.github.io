@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+	/* FONT */
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+	body{
+    		margin:0;
+    		font-family:'Poppins', sans-serif;
+    		background-image:url("bunga.jpg");
+    		background-size:cover;
+    		background-position:center;
+    		background-attachment:fixed;
+    		overflow-x:hidden;
+	}
+
+	/* NAVBAR */
+	.navbar{
+    		width:80%;
+    		margin:auto;
+    		margin-top:30px;
+    		padding:18px;
+    		border-radius:20px;
+    		background:rgba(255,255,255,0.25);
+    		backdrop-filter:blur(10px);
+    		text-align:center;
+    		box-shadow:0 8px 20px rgba(0,0,0,0.1);
+	}
+
+	.navbar a{
+    		text-decoration:none;
+    		color:#7c5c61;
+    		margin:25px;
+    		font-size:18px;
+	}
+
+	/* ===== BOOK SLIDER ===== */
+
+	.book-container{
+    		position:relative;
+    		width:85%;
+    		margin:60px auto;
+	}
+
+	/* IMPORTANT FIX: default hidden */
+	.book-slide{
+    		display:none;
+    		background:rgba(255,255,255,0.25);
+    		backdrop-filter:blur(12px);
+    		border-radius:30px;
+    		padding:40px;
+    		align-items:center;
+    		gap:30px;
+	}
+
+	/* only active shows */
+	.book-slide.active{
+    		display:flex;
+	}
+
+	/* LEFT SIDE */
+	.book-left{
+    		width:35%;
+    		text-align:center;
+    		border-right:2px dashed rgba(124,92,97,0.4);
+    		padding-right:20px;
+	}
+
+	.school-logo{
+    		width:140px;
+    		height:140px;
+    		object-fit:cover;
+    		border-radius:20px;
+	}
+
+	/* RIGHT SIDE */
+	.book-right{
+    		width:65%;
+	}
+
+	/* BUTTON */
+	.prev, .next{
+    		position:absolute;
+    		top:50%;
+    		transform:translateY(-50%);
+    		border:none;
+    		width:45px;
+    		height:45px;
+    		border-radius:50%;
+    		cursor:pointer;
+    		background:white;
+    		font-size:20px;
+    		z-index:10;   /* IMPORTANT FIX */
+	}
+
+	.prev{ left:10px; }
+	.next{ right:10px; }
+
+	/* FOOTER */
+	.footer{
+    		text-align:center;
+    		padding:15px;
+    		background:rgba(255,255,255,0.2);
+    		backdrop-filter:blur(10px);
+    		color:white;
+    		font-size:14px;
+    		margin-top:80px;
+	}
+
+	.social-icons a{
+    		color:white;
+    		margin:0 10px;
+    		font-size:22px;
+	}
+
+</style>
+</head>
+
+<body>
+
+	<!-- NAVBAR -->
+	<div class="navbar">
+    		<a href="index.html">Home</a>
+    		<a href="about.html">About</a>
+    		<a href="education.html">Education</a>
+    		<a href="contact.html">Contact</a>
+	</div>
+
+	<!-- ===== BOOK SLIDER START (LETAK SINI SAHAJA) ===== -->
+	<div class="book-container">
+
+    	<!-- SLIDE 1 -->
+    	<div class="book-slide active">
+        <div class="book-left">
+            <img src="sksp.png" class="school-logo">
+            <h2>SK SERI PAYONG</h2>
+        </div>
+
+        <div class="book-right">
+		<h1>Sekolah Kebangsaan Seri Payong</h1>
+		<p>This is my elementary school. I studied here and gained many experiences in academics and activities.</p>
+		<p> I use to be a library prefect</p>
+		<p> The school environment was very peacefull and i had a lots of good friends</p>
+		<h3>Achievement</h3>
+		<p>I got 3B 2C 1D for UPSR</p>
+
+        </div>
+    	</div>
+
+    	<!-- SLIDE 2 -->
+    	<div class="book-slide">
+        <div class="book-left">
+            <img src="semkip.jpg" class="school-logo">
+            <h2>SMK BUKIT PAYONG</h2>
+        </div>
+        <div class="book-right">
+            <h1>Sekolah Menengah Kebangsaan Bukit Payong</h1>
+		<p> This is my secondary school. I studied here from form 1 to form 5 and i continue Pre-University here. I got 3.25 PNGK for my STPM result. I have an amazing experience as a pre-university student, i got a good friends and teachers that always guide me. </p>
+		<p> 
+		<h3>Achievement</h3>
+		<p>I got 4A 1B 2C 1D 1E and CEFR: B1 for Sijil Pelajaran Malaysia(SPM)</p>
+		<p>I got 3.25 PNGK for Sijil Tinggi Persekolahan Malaysia(STPM) and Band 4.0 for Muet</p>
+		<p>I was Timbalan Exco 3K(Keselamatan, Kebersihan, dan Kesihatan)</p>
+	        </div>
+    	</div>
+
+    	<!-- SLIDE 3 -->
+    	<div class="book-slide">
+        <div class="book-left">
+            <img src="uitm.jpg" class="school-logo">
+            <h2>UiTM</h2>
+        </div>
+
+        <div class="book-right">
+		<h1>Universiti Teknologi MARA Kedah Branch </h1>
+		<p>I am currently pursuing my degree in Library Management at Kedah. Right now i'm in semester 2, my CGPA in semester 1 is 3.35. I hope i can finish this degree and make my family proud.</p>
+		<h3>Achievement</h3>
+		<p>I got 3.35 CGPA for semester 1</p>
+		<p>I join Bachelor of Library Science (BLibS) Club and my position in the club is as AJK Kebajikan</p>
+        </div>
+    	</div>
+
+
+    	<!-- BUTTON -->
+    	<button class="prev" onclick="changeSlide(-1)">❮</button>
+    	<button class="next" onclick="changeSlide(1)">❯</button>
+
+	</div>
+<!-- ===== BOOK SLIDER END ===== -->
+
+
+<!-- FOOTER -->
+	<div class="footer">
+
+	© 2026 Zahrina Azlin | IML470 Individual Project <3
+
+	<div class="social-icons">
+    		 <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/en/"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/"><i class="fab fa-github"></i></a>
+
+	</div>
+
+	</div>
+
+<!-- JS SLIDE -->
+	<script>
+	let slides = document.querySelectorAll(".book-slide");
+	let current = 0;
+
+	function changeSlide(dir){
+    	slides[current].classList.remove("active");
+
+    	current += dir;
+
+    	if(current >= slides.length){
+        current = 0;
+    }
+
+    	if(current < 0){
+        current = slides.length - 1;
+    }
+
+    	slides[current].classList.add("active");
+}
+</script>
+	<!-- JS SLIDE -->
+	<script>
+	let slides = document.querySelectorAll(".book-slide");
+	let current = 0;
+
+	function changeSlide(dir){
+    	slides[current].classList.remove("active");
+
+    	current += dir;
+
+    	if(current >= slides.length){
+        current = 0;
+    }
+
+    	if(current < 0){
+        current = slides.length - 1;
+    }
+
+    slides[current].classList.add("active");
+}
+</script>
+
+<!-- AUDIO SCRIPT LETAK SINI -->
+	<script>
+	function toggleAudio(id, button){
+
+    	let audio = document.getElementById(id);
+
+    	if(audio.paused){
+
+        audio.play();
+        button.innerHTML = "♫";
+
+    } else {
+
+        audio.pause();
+        button.innerHTML = "♫";
+
+    }
+
+}
+</script>
+
+</body>
+</html>

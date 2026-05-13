@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+
+	<head>
+
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+	<style>
+
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+	body{
+    	margin:0;
+   	 font-family:'Poppins', sans-serif;
+   	 background-image:url("bunga.jpg");
+   	 background-size:cover;
+   	 background-position:center;
+   	 background-attachment:fixed;
+
+    	overflow-x:hidden;
+	}
+
+	.navbar{
+    		width:80%;
+    		margin:auto;
+    		margin-top:30px;
+    		padding:18px;
+   		border-radius:20px;
+    		background:rgba(255,255,255,0.25);
+    		backdrop-filter:blur(10px);
+    		text-align:center;
+    		box-shadow:
+    		0 8px 20px rgba(0,0,0,0.1);
+	}
+
+	.navbar a{
+   		text-decoration:none;
+    		color:#7c5c61;
+    		margin:25px;
+    		font-size:18px;
+    		font-weight:500;
+    		transition:0.3s;
+	}
+
+	.navbar a:hover{
+   		color:#d8a7b1;
+	}
+
+	.title{
+    		text-align:center;
+    		font-size:70px;
+    		margin-top:70px;
+    		color:white;
+    		font-weight:700;
+    		letter-spacing:3px;
+    		text-shadow:
+    		0 5px 15px rgba(0,0,0,0.2);
+    		animation:fadeDown 1.5s ease;
+	}
+
+	.container{
+    		display:flex;
+    		justify-content:center;
+    		gap:35px;
+    		flex-wrap:wrap;
+    		margin-top:70px;
+    		margin-bottom:100px;
+	}
+
+	.box{
+
+    		width:280px;
+    		padding:30px;
+    		border-radius:25px;
+    		background:rgba(255,255,255,0.25);
+    		backdrop-filter:blur(12px);
+    		border:1px solid rgba(255,255,255,0.4);
+    		box-shadow:
+    		0 8px 25px rgba(0,0,0,0.1);
+    		transition:0.4s;
+    		animation:fadeUp 1s ease;
+	}
+
+	.box:hover{
+
+    		transform:translateY(-8px);
+    		box-shadow:
+    		0 12px 30px rgba(0,0,0,0.15);
+	}
+
+	.box h2{
+    		text-align:center;
+    		color:#7c5c61;
+    		font-size:30px;
+    		margin-bottom:20px;
+	}
+
+	.box p{
+    		text-align:center;
+    		color:#5f4b4f;
+    		line-height:1.8;
+    		font-size:16px;
+	}
+
+	.footer{
+   		text-align:center;
+    		padding:15px;
+    		background:rgba(255,255,255,0.2);
+    		backdrop-filter:blur(10px);
+    		color:white;
+    		font-size:14px;
+	}
+
+	.social-icons{
+    		margin-top:10px;
+	}
+
+	.social-icons a{
+    		color:white;
+    		margin:0 10px;
+    		font-size:22px;
+    		transition:0.3s;
+	}
+
+	.social-icons a:hover{
+    		color:#7c5c61;
+	}
+
+	.contact-box{
+    		width:400px;
+    		margin:50px auto;
+    		padding:30px;
+    		border-radius:25px;
+    		background:rgba(255,255,255,0.25);
+    		backdrop-filter:blur(12px);
+    		border:1px solid rgba(255,255,255,0.4);
+    		box-shadow:
+    		0 8px 25px rgba(0,0,0,0.1);
+	}
+
+	.contact-box h2{
+    		text-align:center;
+    		color:#7c5c61;
+    		margin-bottom:25px;
+	}
+
+	.contact-box label{
+    		color:#7c5c61;
+    		font-weight:500;
+    		display:block;
+    		margin-bottom:8px;
+	}
+
+	.name-row{
+		display:flex;
+    		gap:10px;
+	}
+
+	.contact-box input,
+	.contact-box textarea{
+    		width:100%;
+    		padding:12px;
+   		margin-bottom:18px;
+    		border:none;
+    		border-radius:12px;
+    		outline:none;
+    		font-family:'Poppins', sans-serif;
+    		box-sizing:border-box;
+	}
+
+	.contact-box textarea{
+    		height:120px;
+    		resize:none;
+	}
+
+	.contact-box button{
+    		width:100%;
+    		padding:12px;
+    		border:none;
+    		border-radius:12px;
+    		background:#7c5c61;
+    		color:white;
+    		font-size:16px;
+    		cursor:pointer;
+    		transition:0.3s;
+	}
+
+	.contact-box button:hover{
+    		background:#d8a7b1;
+	}
+
+
+	@keyframes fadeUp{
+	from{
+    	opacity:0;
+    	transform:translateY(30px);
+	}
+
+	to{
+   	opacity:1;
+    	transform:translateY(0);
+	}
+
+	}
+
+	@keyframes fadeDown{
+
+	from{
+    	opacity:0;
+    	transform:translateY(-30px);
+	}
+
+	to{
+    	opacity:1;
+    	transform:translateY(0);
+	}
+
+	}
+
+</style>
+</head>
+<body>
+	
+	<div class="navbar">
+		<a href="index.html">Home</a>
+		<a href="about.html">About</a>
+		<a href="education.html">Education</a>
+		<a href="contact.html">Contact</a>
+
+	</div>
+
+
+
+<style>
+	img {
+  	border-radius: 8px;
+	}
+</style>
+</head>
+<body>
+
+	<div class="contact-box">
+
+	<h2>Contact Me</h2>
+
+	<form>
+
+	<label>Name (required)</label>
+
+	<div class="name-row">
+    		<input type="text" placeholder="First Name" required>
+    		<input type="text" placeholder="Last Name" required>
+	</div>
+
+	<label>Email (required)</label>
+
+	<input type="email" placeholder="Enter your email" required>
+
+	<label>Description</label>
+
+	<textarea placeholder="Write something..."></textarea>
+
+	<button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+	<div class="footer">
+
+		© 2026 Zahrina Azlin | IML470 Individual Project <3
+
+	<div class="social-icons">
+    		 <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/en/"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/"><i class="fab fa-github"></i></a>
+
+	</div>
+
+</div>
+</body>
+</html>	
+

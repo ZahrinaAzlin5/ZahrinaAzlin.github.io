@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahrina Azlin Portfolio </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+            body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: #fff;
+            background-color: #000;
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+
+        /* --- SIDEBAR & MENU --- */
+        .sidebar {
+            position: fixed;
+            left: -280px; 
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            transition: 0.4s;
+            padding: 80px 20px 20px 20px;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.3);
+            z-index: 999;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sidebar.active { left: 0; }
+
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar ul li { margin: 20px 0; }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            display: block;
+            padding: 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .menu-btn {
+            position: fixed; top: 25px; left: 25px;
+            width: 45px; height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            gap: 5px; cursor: pointer; z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .menu-btn span { width: 25px; height: 3px; background: #fff; border-radius: 5px; }
+
+        /* --- MAIN CONTAINER --- */
+        .main-container {
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+
+        .main-title {
+            text-align: center;
+            border: 3px solid rgba(230, 195, 176, 0.5);
+            color: #f2d9e6;
+            padding: 15px;
+            font-size: clamp(28px, 5vw, 45px);
+            font-weight: 700;
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+        }
+
+        /* --- STAGES STYLE (INTEGRATED) --- */
+        .stage {
+            background: rgba(232, 189, 169, 0.85);
+            backdrop-filter: blur(5px);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+            margin-bottom: 35px;
+            position: relative;
+            overflow: hidden;
+            color: #4b2b52;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .stage:nth-child(even) { flex-direction: row-reverse; }
+
+        .icon {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stage1 .icon { background: #d56d8b; }
+        .stage2 .icon { background: #e6c3b0; } 
+        .stage3 .icon { background: #cba7d8; }
+        .stage4 .icon { background: #d96d93; }
+        .stage5 .icon { background: #f2d9e6; }
+
+        .content { width: 65%; }
+        .content h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 15px; }
+        .content ul { padding-left: 20px; }
+        .content li { margin-bottom: 8px; font-size: 18px; list-style-type: none; position: relative; }
+        .content li::before { content: "✦"; position: absolute; left: -20px; color: #d56d8b; }
+
+        .number {
+            position: absolute;
+            top: 15px;
+            background: #111;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .stage:nth-child(odd) .number { right: 20px; }
+        .stage:nth-child(even) .number { left: 20px; }
+
+        /* --- VIDEO CONTROL & FOOTER --- */
+        .controls { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+        #videoBtn {
+            padding: 10px 20px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            margin-top: 50px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media(max-width: 768px) {
+            .stage, .stage:nth-child(even) { flex-direction: column; text-align: center; }
+            .content { width: 100%; margin-top: 20px; }
+            .icon { width: 120px; height: 120px; font-size: 50px; }
+            .number { top: 10px; right: 10px !important; left: auto !important; }
+            .content li { text-align: left; margin-left: 15px; }
+        }
+
+	.icon img {
+    		width: 80%;
+    		height: 80%;
+    		object-fit: contain;
+    		border-radius: 60%; 
+	}
+    </style>
+</head>
+<body>
+
+    <video autoplay loop id="myVideo">
+        <source src="intro.mp4" type="video/mp4">
+    </video>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="about.html"><i class="fa fa-user"></i> About Me</a></li>
+            <li><a href="programme.html"><i class="fa fa-graduation-cap"></i> My Programme</a></li>
+            <li><a href="skills.html"><i class="fa fa-star"></i> My Skills</a></li>
+            <li><a href="experience.html"><i class="fa fa-heart"></i> My Experience</a></li>
+            <li><a href="media.html"><i class="fa fa-envelope"></i> My Media</a></li>
+        </ul>
+    </nav>
+
+   	<div class="main-container">
+        
+        <div class="main-title">
+            My Experience <3
+        </div>
+
+        <div class="stage stage1">
+            <div class="icon">
+	<img src="blibs.jpeg" alt="Icon">
+	</div>
+            <div class="content">
+                <h2>⭐ Annual Grand Meeting(BLIBS)</h2>
+                <ul>
+                    <li>as AJK Activity</li>
+                    <li>We play "Build A Story" game.</li>
+                    <li>It was a memorable memory for me as a new member of the club.</li>
+                    <li>Former member also help a lot to guide me so i be able to handle it. I was pair with two more member for activity.</li>
+                </ul>
+            </div>
+            <div class="number">01</div>
+        </div>
+
+        <div class="stage stage2">
+            <div class="icon">
+	<img src="ZYA Bistro.png" alt="Icon">
+	</div>
+            <div class="content">
+
+                <h2>⭐ Project Restaurant Management System (Access 2016)</h2>
+                <ul>
+                    <li>I was team with Maira and Lala.</li>
+                    <li>By doing this project we develop new skills and knowledge. Our lecturer also guide us with patience.</li>
+                    <li>Our restaurant name is ZYA Bistro and it was located at Lot 2792, Sebelah Rembayung,50300,Kuala Lumpur. </li>
+                    <li>ZYA Bistro is Baba Nyonya type a restaurant. It serve traditional foods but we upgrade it by adding western food too.</li>
+                </ul>
+            </div>
+            <div class="number">02</div>
+        </div>
+
+        <div class="stage stage3">
+            <div class="icon">
+	<img src="pentas.jpeg" alt="Icon">
+	</div>
+
+            <div class="content">
+                <h2>⭐ AJK Stage for School-level of Raya banquet</h2>
+                <ul>
+                    <li>Me and my friends decorate stage and also photoshoot spot.</li>
+                    <li>We had a lot of fun time together while do the decoration.</li>
+                </ul>
+            </div>
+            <div class="number">03</div>
+        </div>
+
+        <div class="stage stage4">
+            <div class="icon">
+	<img src="MPP.jpeg" alt="Icon">
+	</div>
+
+            <div class="content">
+                <h2>⭐ Majlis Perwakilan Pelajar (MPP) </h2>
+                <ul>
+                    <li> When i was in pra-university, i was Deputy Exco for Health, Safety and Environtment (3K) </li>
+                    <li>It was a good experience for me and make me out of my comfort zone.</li>
+                </ul>
+            </div>
+            <div class="number">04</div>
+        </div>
+
+        <div class="stage stage5">
+            <div class="icon">
+	<img src="memanah.jpg" alt="Icon">
+	</div>
+
+            <div class="content">
+                <h2>⭐ Kejohanan Memanah Majlis Sukan Sekolah Daerah Besut (MSSDB)</h2>
+                <ul>
+                    <li>I was helper.</li>
+                    <li>I cant participate in the competition since SPM is around the corner, but my youngser did join the competiton and won second place.</li>
+                    <li>I am happy and proud of her.</li>
+                </ul>
+            </div>
+            <div class="number">05</div>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button id="videoBtn" onclick="controlVideo()">Pause Video</button>
+    </div>
+
+    <div class="footer">
+        © 2026 Zahrina Azlin | IML470 Project Individual Project <3
+	<div class="social-icons">
+             <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/en/"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/?lang=en"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/"><i class="fab fa-github"></i></a>
+
+        </div>
+    </div>
+
+    <script>
+        // Sidebar Toggle
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+
+        // Video Control
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("videoBtn");
+
+        function controlVideo() {
+            if (video.paused) {
+                video.play();
+                btn.innerHTML = "Pause";
+            } else {
+                video.pause();
+                btn.innerHTML = "Play";
+            }
+        }
+    </script>
+
+</body>
+</html>
